@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/searchData" method="get">
+        <label>
+            Tìm kiếm: <input type="text" name="query">
+        </label>
+        <button type="submit">Tìm kiếm</button>
+    </form>
+    <div th:each="doc: ${datas}">
+        <a th:href="*{doc.url[0]}"><p th:text="*{doc.title[0]}"></p></a>
+    </div>
+</body>
+</html>
